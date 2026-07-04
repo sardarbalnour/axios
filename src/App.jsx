@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
+import Post from "./components/Post";
+
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -14,6 +16,7 @@ function App() {
   return (
     <>
       <h1>Sardar the dev</h1>
+      <Post />
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>{todo.title}</li>
