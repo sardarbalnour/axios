@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Post from "./components/Post";
+import Delete from "./components/Delete";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -17,6 +18,7 @@ function App() {
     <>
       <h1>Sardar the dev</h1>
       <Post />
+      <Delete />
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>{todo.title}</li>
