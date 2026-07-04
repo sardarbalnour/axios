@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Post from "./components/Post";
 import Delete from "./components/Delete";
+import Put from "./components/Put";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -19,6 +20,7 @@ function App() {
       <h1>Sardar the dev</h1>
       <Post />
       <Delete />
+      <Put />
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>{todo.title}</li>
