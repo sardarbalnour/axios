@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => setTodos(res.data));
+      .then((res) => setTodos(res));
 
     // axios
     //   .all([

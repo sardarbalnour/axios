@@ -16,6 +16,17 @@ axios.interceptors.request.use(
   }
 );
 
+axios.interceptors.response.use(
+  (response) => {
+    console.log(response);
+    return response.data;
+  },
+  (error) => {
+    console.log(error);
+    return Promise.reject(error);
+  }
+);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
