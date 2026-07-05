@@ -10,9 +10,23 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
+    // axios
+    //   .get("https://jsonplaceholder.typicode.com/todos")
+    //   .then((res) => setTodos(res.data));
+
     axios
-      .get("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => setTodos(res.data));
+      .all([
+        axios.get("https://jsonplaceholder.typicode.com/todos"),
+        axios.get("https://jsonplaceholder.typicode.com/posts"),
+        axios.get("https://jsonplaceholder.typicode.com/users"),
+      ])
+      .then(
+        axios.spread((todos, posts, users) => {
+          console.log(posts);
+          console.log(users);
+          setTodos(todos.data);
+        })
+      );
   }, []);
 
   return (
